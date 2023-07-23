@@ -1,0 +1,77 @@
+
+	<TestBatch>
+		<TName>UserSelf Save negative</TName>
+		<TDescrip>Negative tests of the UserSelf Save method</TDescrip>
+		<TGID>{{TGID}}</TGID>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>UserSelf.Save.base</TMName>
+			<TMDescrip>empty input params</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>UserSelf.Save.base</MName>
+				<PList>
+					<Prm>
+						<Name>FirstName</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+					<Prm>
+						<Name>MiddleName</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+					<Prm>
+						<Name>LastName</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+					<Prm>
+						<Name>Email</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>UserSelf.Save.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>UserSelf.Save.base</TMName>
+			<TMDescrip>missing input params</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>UserSelf.Save.base</MName>
+				<PList>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>UserSelf.Save.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+	</TestBatch>
+	

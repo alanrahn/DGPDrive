@@ -1,0 +1,65 @@
+
+	<TestBatch>
+		<TName>File GetSrcCount negative</TName>
+		<TDescrip>Negative tests of the File GetSrcCount method</TDescrip>
+		<TGID>{{TGID}}</TGID>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>File.GetSrcCount.base</TMName>
+			<TMDescrip>empty input params</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>File.GetSrcCount.base</MName>
+				<PList>
+					<Prm>
+						<Name>SrcDBName</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+					<Prm>
+						<Name>EndID</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>File.GetSrcCount.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>File.GetSrcCount.base</TMName>
+			<TMDescrip>missing input params</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>File.GetSrcCount.base</MName>
+				<PList>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>File.GetSrcCount.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+	</TestBatch>
+	

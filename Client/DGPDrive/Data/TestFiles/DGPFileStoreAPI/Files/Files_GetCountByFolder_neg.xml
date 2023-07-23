@@ -1,0 +1,59 @@
+
+	<TestBatch>
+		<TName>File GetCountByFolder negative</TName>
+		<TDescrip>Negative tests of the File GetCountByFolder method</TDescrip>
+		<TGID>{{TGID}}</TGID>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>File.GetCountByFolder.base</TMName>
+			<TMDescrip>empty input params</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>File.GetCountByFolder.base</MName>
+				<PList>
+					<Prm>
+						<Name>FolderGID</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>File.GetCountByFolder.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>File.GetCountByFolder.base</TMName>
+			<TMDescrip>missing input params</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>File.GetCountByFolder.base</MName>
+				<PList>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>File.GetCountByFolder.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+	</TestBatch>
+	

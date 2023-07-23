@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<SysList>
+	<Sys>
+		<SysName>DGP Lattice Beta</SysName>
+		<SysDescrip>Dev, Test and Prod DGP environments</SysDescrip>
+		<LocList>
+			<Loc>
+				<LocName>Dev localhost</LocName>
+				<LocDescrip>connect to a web service on the local computer</LocDescrip>
+				<EPList>
+					<EP>
+						<EPName>web service</EPName>
+						<EPDescrip>direct access</EPDescrip>
+						<EPURL>http://localhost/DGPWebSvc/DGPCntrl.aspx</EPURL>
+					</EP>
+					<EP>
+						<EPName>web service proxy</EPName>
+						<EPDescrip>proxy access</EPDescrip>
+						<EPURL>http://localhost/DGPWebApp/DGPProxy.aspx</EPURL>
+					</EP>
+				</EPList>
+			</Loc>
+			<Loc>
+				<LocName>WinTestSvr</LocName>
+				<LocDescrip>Local Windows Server 2016</LocDescrip>
+				<EPList>
+					<EP>
+						<EPName>QA web service</EPName>
+						<EPDescrip>direct access</EPDescrip>
+						<EPURL>http://WinTestSvr/DGP_QA/WebSvc/DGPCntrl.aspx</EPURL>
+					</EP>
+					<EP>
+						<EPName>QA web service proxy</EPName>
+						<EPDescrip>proxy access</EPDescrip>
+						<EPURL>http://WinTestSvr/DGP_QA/WebApp/DGPProxy.aspx</EPURL>
+					</EP>
+					<EP>
+						<EPName>Prod web service</EPName>
+						<EPDescrip>direct access</EPDescrip>
+						<EPURL>http://WinTestSvr/DGP_Prod/WebSvc/DGPCntrl.aspx</EPURL>
+					</EP>
+					<EP>
+						<EPName>Prod web service proxy</EPName>
+						<EPDescrip>proxy access</EPDescrip>
+						<EPURL>http://WinTestSvr/DGP_Prod/WebApp/DGPProxy.aspx</EPURL>
+					</EP>
+				</EPList>
+			</Loc>
+			<Loc>
+				<LocName>DGP_VM2</LocName>
+				<LocDescrip>Vultr Windows Server 2019</LocDescrip>
+				<EPList>
+					<EP>
+						<EPName>QA web service</EPName>
+						<EPDescrip>direct access</EPDescrip>
+						<EPURL>http://45.32.194.87/DGP_QA/WebSvc/DGPCntrl.aspx</EPURL>
+					</EP>
+					<EP>
+						<EPName>QA web service proxy</EPName>
+						<EPDescrip>proxy access</EPDescrip>
+						<EPURL>http://45.32.194.87/DGP_QA/WebApp/DGPProxy.aspx</EPURL>
+					</EP>
+					<EP>
+						<EPName>Prod web service</EPName>
+						<EPDescrip>direct access</EPDescrip>
+						<EPURL>http://45.32.194.87/DGP_Prod/WebSvc/DGPCntrl.aspx</EPURL>
+					</EP>
+					<EP>
+						<EPName>Prod web service proxy</EPName>
+						<EPDescrip>proxy access</EPDescrip>
+						<EPURL>http://45.32.194.87/DGP_Prod/WebApp/DGPProxy.aspx</EPURL>
+					</EP>
+				</EPList>
+			</Loc>
+		</LocList>
+	</Sys>
+</SysList>

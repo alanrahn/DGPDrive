@@ -1,0 +1,65 @@
+
+	<TestBatch>
+		<TName>APIRole New Negative</TName>
+		<TDescrip>Negative tests of the APIRole New method</TDescrip>
+		<TGID>{{TGID}}</TGID>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>APIRole.New.base</TMName>
+			<TMDescrip>empty input parameters</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>APIRole.New.base</MName>
+				<PList>
+					<Prm>
+						<Name>RoleName</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+					<Prm>
+						<Name>RoleDescrip</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>APIRole.New.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>APIRole.New.base</TMName>
+			<TMDescrip>missing input parameters</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>APIRole.New.base</MName>
+				<PList>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>APIRole.New.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+	</TestBatch>
+	

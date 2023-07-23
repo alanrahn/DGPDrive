@@ -1,0 +1,64 @@
+
+	<TestBatch>
+		<TName>APIRole GetByName negative</TName>
+		<TDescrip>Negative tests of the APIRole GetByName method using core data</TDescrip>
+		<TGID>{{TGID}}</TGID>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>APIRole.GetByName.base</TMName>
+			<TMDescrip>empty input params</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>APIRole.GetByName.base</MName>
+				<PList>
+					<Prm>
+						<Name>SchemaFlag</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+					<Prm>
+						<Name>RoleName</Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>APIRole.GetByName.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>APIRole.GetByID.base</TMName>
+			<TMDescrip>missing input params</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>APIRole.GetByName.base</MName>
+				<PList>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>APIRole.GetByName.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+	</TestBatch>

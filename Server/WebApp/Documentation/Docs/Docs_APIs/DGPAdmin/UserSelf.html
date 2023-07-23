@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../CSS/DocsPage.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body style="background-color:#2E2E2E;">
+    <div class="titlediv">UserSelf.Login.base</div>
+    <p>Method to cause an update of authorization data cached in user's own account record, return a collection of information about the web service, and also return a security token to authenticate the web service to the client app.</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>UserSelf.Login.base_DEFAULT</td><td>Text</td><td colspan="3">returns the user and web service info (multiple elements)</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">UserSelf.GetRoles.base</div>
+    <p>Method to get the list of roles assigned for the user's own account record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>UserSelf.GetRoles.base_DEFAULT</td><td>Text</td><td colspan="3">returns a comma-delimited list of roles to which the user account has been assigned</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">UserSelf.GetGroups.base</div>
+    <p>Method to get the list of datagroups assigned for both read and write access to the user's own account record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>UserSelf.GetGroups.base_ReadList</td><td>Text</td><td colspan="3">returns a comma-delimited list of datagroups to which the user account has been assigned read access</td></tr>
+            <tr><td>UserSelf.GetGroups.base_WriteList</td><td>Text</td><td colspan="3">returns a comma-delimited list of datagroups to which the user account has been assigned write access</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">UserSelf.GetInfo.base</div>
+    <p>Method to query for certain data about the user's own account record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Text</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>UserSelf.GetInfo.base_DEFAULT</td><td>DataTable</td><td colspan="3">selected information about the user account</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">UserSelf.GetUserGroupList.base</div>
+    <p>Method to query for certain data about the user's own account record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Text</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>UserSelf.GetUserGroupList.base_DEFAULT</td><td>DataTable</td><td colspan="3">list of groups to which the user account has access</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">UserSelf.Save.base</div>
+    <p>Method to update certain values of the user's own account record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>FirstName</td><td>Text</td><td>10</td><td>true</td><td>the first name of the account record</td></tr>
+            <tr><td>MiddleName</td><td>Text</td><td>10</td><td>true</td><td>the middle name of the account record</td></tr>
+            <tr><td>LastName</td><td>Text</td><td>50</td><td>true</td><td>the last name of the account record</td></tr>
+            <tr><td>Email</td><td>Text</td><td>50</td><td>true</td><td>the email address for the account record</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>UserSelf.Save.base_DEFAULT</td><td>Text</td><td colspan="3">returns the action and result code of the update</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">UserSelf.ChangePassword.base</div>
+    <p>Method to update the password of the user's own account record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>Password</td><td>Text</td><td>10</td><td>true</td><td>the new password for the user account</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>UserSelf.ChangePassword.base_DEFAULT</td><td>Text</td><td colspan="3">returns the action and result code of the update</td></tr>
+        </table>
+    </div>
+    <p>&nbsp;</p>
+</body>
+</html>

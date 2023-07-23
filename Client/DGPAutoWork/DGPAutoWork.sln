@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGPAutoWork", "DGPAutoWork.csproj", "{3D9F5C1B-7E2A-433A-8E54-2D42711FA914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiUtil", "..\..\Server\APILibs\APIUtil\ApiUtil.csproj", "{536F7976-5146-4741-8FEC-3EC152B4630B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D9F5C1B-7E2A-433A-8E54-2D42711FA914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9F5C1B-7E2A-433A-8E54-2D42711FA914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9F5C1B-7E2A-433A-8E54-2D42711FA914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9F5C1B-7E2A-433A-8E54-2D42711FA914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536F7976-5146-4741-8FEC-3EC152B4630B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536F7976-5146-4741-8FEC-3EC152B4630B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536F7976-5146-4741-8FEC-3EC152B4630B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536F7976-5146-4741-8FEC-3EC152B4630B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0A1F0D1-7AFF-4486-8D33-1DB9A82327BE}
+	EndGlobalSection
+EndGlobal

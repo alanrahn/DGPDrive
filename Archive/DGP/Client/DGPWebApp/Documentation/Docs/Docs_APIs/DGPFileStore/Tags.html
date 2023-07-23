@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../CSS/DocsPage.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body style="background-color:#2E2E2E;">
+    <div class="titlediv">Tags.GetByID.base</div>
+    <p>Method to query for a specific Tags record using the global ID value</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>TagGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID value for the Tags record</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.GetByID.base_DEFAULT</td><td>DataTable</td><td colspan="3">the Tag record found matching the ID value</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">Tags.GetByName.base</div>
+    <p> Method to query for a specific Tags record using the name value</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td></td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>TagName</td><td>Text</td><td>50</td><td>true</td><td>the TagName value</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.GetByName.base_DEFAULT</td><td>DataTable</td><td colspan="3">the Tag record found matching the name value</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">Tags.FilterByName.base</div>
+    <p>Method to query for a page of Tag search results that match the partial name search value</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>TagName</td><td>Text</td><td>50</td><td>false</td><td>optional TagName search value</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.FilterByName.base_DEFAULT</td><td>DataTable</td><td colspan="3">top 100 records that match the tag name search criteria</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">Tags.GetSource.base</div>
+    <p>Method to query for a batch of source records that are newer than the placeholder value</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>SourceDB</td><td>Text</td><td>50</td><td>true</td><td>the name of the database to be queried for source records</td></tr>
+            <tr><td>StartID</td><td>Long</td><td></td><td>true</td><td>the row_id value of the last source record processed</td></tr>
+            <tr><td>BatchSize</td><td>Int</td><td></td><td>true</td><td>the maximum number of records to return as a batch</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.GetSource.base_DEFAULT</td><td>DataTable</td><td colspan="3">a batch of records newer than the placeholder value</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">Tags.Duplicate.base</div>
+    <p>Method to query for the existence of duplicate Tags records</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.Duplicate.base_DEFAULT</td><td>DataTable</td><td colspan="3">the results of the scan for duplicate records</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">Tags.GetDestCounts.base</div>
+    <p>Method to query for the max src_id value and total number of source records in the destination table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SrcDBName</td><td>Text</td><td>50</td><td>true</td><td>the unique name of the database to be queried</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.GetDestCounts.base_DEFAULT</td><td>Int</td><td colspan="3">comma delimited list of the max src_id value and total count of records from the source database in the destination table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">Tags.GetSrcCounts.base</div>
+    <p>Method to query table for the total number of source records and the number of source records less than the EndID (row_id) value in the source table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SrcDBName</td><td>Text</td><td>50</td><td>true</td><td>the unique name of the database to be queried</td></tr>
+            <tr><td>EndID</td><td>Long</td><td></td><td>true</td><td>the maximum row_id value to be queried</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.GetSrcCounts.base_DEFAULT</td><td>Int</td><td colspan="3">comma delimited list of the total count of source records from the source database and the count of records less than the endid in the source table</td></tr>
+        </table>
+    </div>
+
+    <p>&nbsp;</p>
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+
+    <div class="titlediv">Tags.New.base</div>
+    <p>Method to insert a new Tag record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>TagName</td><td>Text</td><td>50</td><td>true</td><td>the name of the new Tags record</td></tr>
+            <tr><td>TagDescrip</td><td>Text</td><td>100</td><td>true</td><td>the description of the new Tags record</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.New.base_DEFAULT</td><td>Text</td><td colspan="3">if successful, the global ID of the new Tags record; otherwise, the error message</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">Tags.Save.base</div>
+    <p>Method to update an existing Tag record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>TagGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the Tags record</td></tr>
+            <tr><td>TagName</td><td>Text</td><td>50</td><td>true</td><td>the name of the new Tags record</td></tr>
+            <tr><td>TagDescrip</td><td>Text</td><td>100</td><td>true</td><td>the description of the new Tags record</td></tr>
+            <tr><td>row_ms</td><td>Long</td><td></td><td>true</td><td>the unix time value of the record to be updated</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.Save.base_DEFAULT</td><td>Text</td><td colspan="3">returns the action and result code of the update</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">Tags.Delete.base</div>
+    <p>Method to update an existing Tags record (soft delete as update)</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>TagGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the Tags record</td></tr>
+            <tr><td>TagName</td><td>Text</td><td>50</td><td>true</td><td>the name of the new Tags record</td></tr>
+            <tr><td>TagDescrip</td><td>Text</td><td>100</td><td>true</td><td>the description of the new Tags record</td></tr>
+            <tr><td>row_ms</td><td>Long</td><td></td><td>true</td><td>the unix time value of the record to be updated</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.Delete.base_DEFAULT</td><td>Text</td><td colspan="3">returns the action and result code of the update</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">Tags.Replicate.base</div>
+    <p>Method to merge a batch of source records into a destination table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SourceRecords</td><td>DataTable</td><td></td><td>true</td><td>a batch of source records to be merged into a destination table</td></tr>
+            <tr><td>StartID</td><td>Long</td><td></td><td>true</td><td>the row_id value of the last source record processed (initial placeholder set to zero)</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Tags.Replicate.base_DEFAULT</td><td>Text</td><td colspan="3">returns the new placeholder value of the last record merged into the destination table</td></tr>
+        </table>
+    </div>
+    <p>&nbsp;</p>
+</body>
+</html>

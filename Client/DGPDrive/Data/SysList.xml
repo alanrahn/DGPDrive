@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<SysList>
+	<Sys>
+		<SysName>DGPDrive Beta</SysName>
+		<SysDescrip>Dev, Test and Prod DGP environments</SysDescrip>
+		<LocList>
+			<Loc>
+				<LocName>Dev</LocName>
+				<LocDescrip>connect to a web service on the local computer</LocDescrip>
+				<EPList>
+					<EP>
+						<EPName>SOAP service</EPName>
+						<EPDescrip>direct access</EPDescrip>
+						<EPURL>http://127.0.0.1/DGPWebSvc/DGPSOAPSvc.asmx</EPURL>
+					</EP>
+					<EP>
+						<EPName>SOAP service proxy</EPName>
+						<EPDescrip>proxy access</EPDescrip>
+						<EPURL>http://127.0.0.1/DGPWebApp/DGPSOAPProxy.aspx</EPURL>
+					</EP>
+				</EPList>
+			</Loc>
+			<Loc>
+				<LocName>Test</LocName>
+				<LocDescrip>Local Windows Server 2016</LocDescrip>
+				<EPList>
+					<EP>
+						<EPName>QA web service</EPName>
+						<EPDescrip>direct access</EPDescrip>
+						<EPURL>http://10.0.0.4/DGPWebSvc/DGPCntrl.aspx</EPURL>
+					</EP>
+					<EP>
+						<EPName>QA web service proxy</EPName>
+						<EPDescrip>proxy access</EPDescrip>
+						<EPURL>http://10.0.0.4/DGPWebApp/DGPProxy.aspx</EPURL>
+					</EP>
+				</EPList>
+			</Loc>
+			<Loc>
+				<LocName>QA</LocName>
+				<LocDescrip>Remote Windows Server 2022</LocDescrip>
+				<EPList>
+					<EP>
+						<EPName>QA web service</EPName>
+						<EPDescrip>direct access</EPDescrip>
+						<EPURL>http://67.211.217.240/DGP_QA/WebSvc/DGPCntrl.aspx</EPURL>
+					</EP>
+					<EP>
+						<EPName>QA web service proxy</EPName>
+						<EPDescrip>proxy access</EPDescrip>
+						<EPURL>http://45.32.194.87/DGP_QA/WebApp/DGPProxy.aspx</EPURL>
+					</EP>
+				</EPList>
+			</Loc>
+		</LocList>
+	</Sys>
+</SysList>

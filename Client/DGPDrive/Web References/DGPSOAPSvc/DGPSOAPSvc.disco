@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost/DGPWebSvc/DGPSOAPSvc.asmx?wsdl" docRef="http://localhost/DGPWebSvc/DGPSOAPSvc.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost/DGPWebSvc/DGPSOAPSvc.asmx" xmlns:q1="http://DGPDrive.net/" binding="q1:DGPSOAPSvcSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost/DGPWebSvc/DGPSOAPSvc.asmx" xmlns:q2="http://DGPDrive.net/" binding="q2:DGPSOAPSvcSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

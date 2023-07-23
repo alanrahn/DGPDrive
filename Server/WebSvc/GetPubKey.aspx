@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetPubKey.aspx.cs" Inherits="DGPWebSvc.GetPubKey" %>

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/DocsPage.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body style="background-color:#2E2E2E;">
+    <p></p>
+    <div class="titlediv">API Request Message: Format</div>
+    <div class="innerdiv">
+        <p></p>
+    </div>
+    <div class="titlediv">API Response Message: Format</div>
+    <div class="innerdiv">
+        <p></p>
+    </div>
+    <div class="titlediv">API Request Message: Maximum Size</div>
+    <p>Test of the maximum request limit imposed by both IIS and ASP.NET</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Test Method</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>Test.EchoTest.base</td><td>Text</td><td></td><td>true</td><td>the EchoTest method is called with a block of text that causes the request message to be over 64K in size</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Test.EchoTest.base_DEFAULT</td><td>Text</td><td colspan="3">should return an error message indicating the message was too large</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">API Request Message: XML Fragment</div>
+    <p>Test of the rejection of request messages that contain an XML header</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Test Method</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>Test.EchoTest.base</td><td>Text</td><td></td><td>true</td><td>a request message is sent as an XML document instead of an XML fragment</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Test.EchoTest.base_DEFAULT</td><td>Text</td><td colspan="3">should return an error message indicating the message was not an XML fragment</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">API Request Message: Time-To-Live</div>
+    <p>Test of the rejection of request messages with an expired TTL timestamp</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Test Method</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>Test.EchoTest.base</td><td>Text</td><td></td><td>true</td><td>a request message is sent with an expired timestamp</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Test.EchoTest.base_DEFAULT</td><td>Text</td><td colspan="3">should return an error message indicating the message TTL timed out</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">API Request Message: Authentication</div>
+    <p>Test of the HMAC hash authentication mechanism</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Test Method</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>Test.EchoTest.base</td><td>Text</td><td></td><td>true</td><td>a request message is sent with an incorrect HMAC hash value</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Test.EchoTest.base_DEFAULT</td><td>Text</td><td colspan="3">should return an error message indicating the message HMAC authentication failed</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">API Request Message: Failed Authentication Count</div>
+    <p>Test of the lockout of accounts that exceed the maximum failed authentication count</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Test Method</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>Test.EchoTest.base</td><td>Text</td><td></td><td>true</td><td>a batch of request messages are sent with incorrect HMAC hash values</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Test.EchoTest.base_DEFAULT</td><td>Text</td><td colspan="3">should disable the account and return an error message indicating the authentication failures</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">API Request Message: Expired Password</div>
+    <p>Test of the web service expired password functionality.</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Test Method</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>Test.EchoTest.base</td><td>Text</td><td></td><td>true</td><td>a request message is sent with an account that has expired</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Test.EchoTest.base_DEFAULT</td><td>Text</td><td colspan="3">should only allow the reset password method to be called</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">API Request Message: Authorization</div>
+    <p>Test of the request message authorization mechanism.</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Test Method</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>Test.EchoTest.base</td><td>Text</td><td></td><td>true</td><td>a request message is sent calling a method that the account is not authorized to access</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Test.EchoTest.base_DEFAULT</td><td>Text</td><td colspan="3">should return an error message indicating the account is not authorized to call the method</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">API Request Message: Request Count per Minute</div>
+    <p>Test of the rate limit per account for the number of API request messages that can be called per minute.</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Test Method</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>Test.EchoTest.base</td><td>Text</td><td></td><td>true</td><td>a batch of method calls are sent that is greater than the method limit for the account</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>Test.EchoTest.base_DEFAULT</td><td>Text</td><td colspan="3">should eventually return an error message that the method limit was exceeded</td></tr>
+        </table>
+    </div>
+    <p>&nbsp;</p>
+</body>
+</html>

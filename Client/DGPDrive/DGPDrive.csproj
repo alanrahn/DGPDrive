@@ -1,0 +1,760 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86F22A1E-E009-4095-8D1F-4B532ABEB3FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DGPDrive</RootNamespace>
+    <AssemblyName>DGPDrive</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.4.0, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft-WindowsAPICodePack-Core.1.1.4\lib\net48\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.4.0, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft-WindowsAPICodePack-Shell.1.1.4\lib\net48\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Configuration\GeneralWork\frmEditGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Configuration\GeneralWork\frmEditGeneral.Designer.cs">
+      <DependentUpon>frmEditGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Configuration\ReplicaWork\frmEditReplica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Configuration\ReplicaWork\frmEditReplica.Designer.cs">
+      <DependentUpon>frmEditReplica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Configuration\GeneralWork\ucGeneralWork.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Configuration\GeneralWork\ucGeneralWork.Designer.cs">
+      <DependentUpon>ucGeneralWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Configuration\ReplicaWork\ucReplicaWork.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Configuration\ReplicaWork\ucReplicaWork.Designer.cs">
+      <DependentUpon>ucReplicaWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Connect\frmConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Connect\frmConnect.Designer.cs">
+      <DependentUpon>frmConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmEditFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmEditFile.Designer.cs">
+      <DependentUpon>frmEditFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmEditTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmEditTag.Designer.cs">
+      <DependentUpon>frmEditTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmFileDownload2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmFileDownload2.Designer.cs">
+      <DependentUpon>frmFileDownload2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmFileTags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmFileTags.Designer.cs">
+      <DependentUpon>frmFileTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmFileUpload2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmFileUpload2.Designer.cs">
+      <DependentUpon>frmFileUpload2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmEditFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmEditFolder.Designer.cs">
+      <DependentUpon>frmEditFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmFileHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmFileHist.Designer.cs">
+      <DependentUpon>frmFileHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmTagHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\FileStore\frmTagHist.Designer.cs">
+      <DependentUpon>frmTagHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FileStore\TreeUtil.cs" />
+    <Compile Include="Screens\FileStore\ucFileStore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\FileStore\ucFileStore.Designer.cs">
+      <DependentUpon>ucFileStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FileStore\ucTags.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\FileStore\ucTags.Designer.cs">
+      <DependentUpon>ucTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Help\frmRSAKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Help\frmRSAKey.Designer.cs">
+      <DependentUpon>frmRSAKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIMethods\frmEditMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIMethods\frmEditMethod.Designer.cs">
+      <DependentUpon>frmEditMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIMethods\frmMethodHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIMethods\frmMethodHist.Designer.cs">
+      <DependentUpon>frmMethodHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIMethods\frmMethodRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIMethods\frmMethodRoles.Designer.cs">
+      <DependentUpon>frmMethodRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIMethods\ucApiMethods.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIMethods\ucApiMethods.Designer.cs">
+      <DependentUpon>ucApiMethods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\IDriveUC.cs" />
+    <Compile Include="Screens\Security\APIRoles\frmEditRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIRoles\frmEditRole.Designer.cs">
+      <DependentUpon>frmEditRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIRoles\frmRoleHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIRoles\frmRoleHist.Designer.cs">
+      <DependentUpon>frmRoleHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIRoles\frmRoleMethods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIRoles\frmRoleMethods.Designer.cs">
+      <DependentUpon>frmRoleMethods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIRoles\ucApiRoles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIRoles\ucApiRoles.Designer.cs">
+      <DependentUpon>ucApiRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmEditUser.Designer.cs">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmUserHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmUserHist.Designer.cs">
+      <DependentUpon>frmUserHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmUserMethods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmUserMethods.Designer.cs">
+      <DependentUpon>frmUserMethods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmUserGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmUserGroups.Designer.cs">
+      <DependentUpon>frmUserGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmUserRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\frmUserRoles.Designer.cs">
+      <DependentUpon>frmUserRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\ucApiUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\APIUsers\ucApiUsers.Designer.cs">
+      <DependentUpon>ucApiUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\DataGroups\frmEditGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\DataGroups\frmEditGroup.Designer.cs">
+      <DependentUpon>frmEditGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\DataGroups\frmGroupHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\DataGroups\frmGroupHist.Designer.cs">
+      <DependentUpon>frmGroupHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\DataGroups\ucDataGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\DataGroups\ucDataGroup.Designer.cs">
+      <DependentUpon>ucDataGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Testing\APITestHarness\ucApiTestHarness.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Testing\APITestHarness\ucApiTestHarness.Designer.cs">
+      <DependentUpon>ucApiTestHarness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Testing\APITestHarness\frmTestResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Testing\APITestHarness\frmTestResults.Designer.cs">
+      <DependentUpon>frmTestResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Testing\APITestHarness\frmViewXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Testing\APITestHarness\frmViewXML.Designer.cs">
+      <DependentUpon>frmViewXML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Testing\AutoWorkLog\frmAutoWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Testing\AutoWorkLog\frmAutoWork.Designer.cs">
+      <DependentUpon>frmAutoWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Help\frmUtility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Help\frmUtility.Designer.cs">
+      <DependentUpon>frmUtility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Testing\DGPErrors\frmDGPErrorLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Testing\DGPErrors\frmDGPErrorLog.Designer.cs">
+      <DependentUpon>frmDGPErrorLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Testing\DriveMetrics\frmDGPDriveMetrics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Testing\DriveMetrics\frmDGPDriveMetrics.Designer.cs">
+      <DependentUpon>frmDGPDriveMetrics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Testing\TestResults\frmTestResultLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Testing\TestResults\frmTestResultLog.Designer.cs">
+      <DependentUpon>frmTestResultLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\User\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\User\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\User\frmEditSelf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\User\frmEditSelf.Designer.cs">
+      <DependentUpon>frmEditSelf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Connect\SysFileUtil.cs" />
+    <Compile Include="SOAPMsgUtil.cs" />
+    <Compile Include="Web References\DGPSOAPSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Configuration\GeneralWork\frmEditGeneral.resx">
+      <DependentUpon>frmEditGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Configuration\ReplicaWork\frmEditReplica.resx">
+      <DependentUpon>frmEditReplica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Configuration\GeneralWork\ucGeneralWork.resx">
+      <DependentUpon>ucGeneralWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Configuration\ReplicaWork\ucReplicaWork.resx">
+      <DependentUpon>ucReplicaWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Connect\frmConnect.resx">
+      <DependentUpon>frmConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FileStore\frmEditFile.resx">
+      <DependentUpon>frmEditFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FileStore\frmEditTag.resx">
+      <DependentUpon>frmEditTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FileStore\frmFileDownload2.resx">
+      <DependentUpon>frmFileDownload2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FileStore\frmFileTags.resx">
+      <DependentUpon>frmFileTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FileStore\frmFileUpload2.resx">
+      <DependentUpon>frmFileUpload2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FileStore\frmEditFolder.resx">
+      <DependentUpon>frmEditFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FileStore\frmFileHist.resx">
+      <DependentUpon>frmFileHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FileStore\frmTagHist.resx">
+      <DependentUpon>frmTagHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FileStore\ucFileStore.resx">
+      <DependentUpon>ucFileStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FileStore\ucTags.resx">
+      <DependentUpon>ucTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Help\frmRSAKey.resx">
+      <DependentUpon>frmRSAKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIMethods\frmEditMethod.resx">
+      <DependentUpon>frmEditMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIMethods\frmMethodHist.resx">
+      <DependentUpon>frmMethodHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIMethods\frmMethodRoles.resx">
+      <DependentUpon>frmMethodRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIMethods\ucApiMethods.resx">
+      <DependentUpon>ucApiMethods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIRoles\frmEditRole.resx">
+      <DependentUpon>frmEditRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIRoles\frmRoleHist.resx">
+      <DependentUpon>frmRoleHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIRoles\frmRoleMethods.resx">
+      <DependentUpon>frmRoleMethods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIRoles\ucApiRoles.resx">
+      <DependentUpon>ucApiRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIUsers\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIUsers\frmEditUser.resx">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIUsers\frmUserHist.resx">
+      <DependentUpon>frmUserHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIUsers\frmUserMethods.resx">
+      <DependentUpon>frmUserMethods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIUsers\frmUserGroups.resx">
+      <DependentUpon>frmUserGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIUsers\frmUserRoles.resx">
+      <DependentUpon>frmUserRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\APIUsers\ucApiUsers.resx">
+      <DependentUpon>ucApiUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\DataGroups\frmEditGroup.resx">
+      <DependentUpon>frmEditGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\DataGroups\frmGroupHist.resx">
+      <DependentUpon>frmGroupHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Security\DataGroups\ucDataGroup.resx">
+      <DependentUpon>ucDataGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Testing\APITestHarness\ucApiTestHarness.resx">
+      <DependentUpon>ucApiTestHarness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Testing\APITestHarness\frmTestResults.resx">
+      <DependentUpon>frmTestResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Testing\APITestHarness\frmViewXML.resx">
+      <DependentUpon>frmViewXML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Testing\AutoWorkLog\frmAutoWork.resx">
+      <DependentUpon>frmAutoWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Help\frmUtility.resx">
+      <DependentUpon>frmUtility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Testing\DGPErrors\frmDGPErrorLog.resx">
+      <DependentUpon>frmDGPErrorLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Testing\DriveMetrics\frmDGPDriveMetrics.resx">
+      <DependentUpon>frmDGPDriveMetrics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Testing\TestResults\frmTestResultLog.resx">
+      <DependentUpon>frmTestResultLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\User\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\User\frmEditSelf.resx">
+      <DependentUpon>frmEditSelf.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\DGPSOAPSvc\DGPSOAPSvc.wsdl" />
+    <None Include="Web References\DGPSOAPSvc\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Server\APILibs\APIUtil\ApiUtil.csproj">
+      <Project>{536f7976-5146-4741-8fec-3ec152b4630b}</Project>
+      <Name>ApiUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\DGPSOAPSvc\DGPSOAPSvc.disco" />
+    <None Include="Icons\Places-folder-yellow-icon.png" />
+    <None Include="Icons\Places-folder-blue-icon.png" />
+    <None Include="Icons\Places-folder-grey-icon.png" />
+    <None Include="Icons\Places-folder-brown-icon.png" />
+    <None Include="Icons\Places-folder-green-icon.png" />
+    <None Include="Icons\Yellow-icon.png" />
+    <None Include="Icons\Red-icon.png" />
+    <None Include="Icons\Blue-icon.png" />
+    <None Include="Icons\Gray-icon.png" />
+    <None Include="Icons\Green-icon.png" />
+    <None Include="Icons\Folder2-yellow.png" />
+    <None Include="Icons\folder3-icon.png" />
+    <None Include="Icons\folder-icon.png" />
+    <Content Include="Data\SysList.xml" />
+    <Content Include="Data\TestFiles\APIMessage\APIMessage_Authentication_neg.xml" />
+    <Content Include="Data\TestFiles\APIMessage\APIMessage_AuthFailPassword.xml" />
+    <Content Include="Data\TestFiles\APIMessage\APIMessage_AuthFailUsername.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_GetByName_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_GetCount_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_GetHistory_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_GetSearch_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_Recover_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIMethod\APIMethod_Save_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_GetByName_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_GetCount_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_GetHistory_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_GetSearch_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_Recover_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIRole\APIRole_Save_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_GetByName_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_GetCount_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_GetHistory_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_GetSearch_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_Recover_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\APIUser\APIUser_Save_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_GetByName_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_GetCount_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_GetHistory_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_GetSearch_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_Recover_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\DataGroup\DataGroup_Save_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\GroupUser\GroupUser_Assign_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\GroupUser\GroupUser_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\GroupUser\GroupUser_GetAssigned_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\GroupUser\GroupUser_GetAvailable_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\GroupUser\GroupUser_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\GroupUser\GroupUser_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\GroupUser\GroupUser_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\GroupUser\GroupUser_Remove_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\GroupUser\GroupUser_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleMethod\RoleMethod_Assign_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleMethod\RoleMethod_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleMethod\RoleMethod_GetAssigned_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleMethod\RoleMethod_GetAvailable_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleMethod\RoleMethod_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleMethod\RoleMethod_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleMethod\RoleMethod_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleMethod\RoleMethod_Remove_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleMethod\RoleMethod_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleUser\RoleUser_Assign_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleUser\RoleUser_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleUser\RoleUser_GetAssigned_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleUser\RoleUser_GetAvailable_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleUser\RoleUser_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleUser\RoleUser_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleUser\RoleUser_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleUser\RoleUser_Remove_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\RoleUser\RoleUser_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\UserSelf\UserSelf_ChangePassword_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\UserSelf\UserSelf_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\UserSelf\UserSelf_GetInfo_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\UserSelf\UserSelf_GetUserGroupList_neg.xml" />
+    <Content Include="Data\TestFiles\DGPAdminAPI\UserSelf\UserSelf_Save_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Favorites\Favorites_Assign_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Favorites\Favorites_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Favorites\Favorites_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Favorites\Favorites_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Favorites\Favorites_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Favorites\Favorites_Remove_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Favorites\Favorites_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileShards\FileShards_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileShards\FileShards_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileShards\FileShards_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileShards\FileShards_GetByRowID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileShards\FileShards_GetDataBySegNum_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileShards\FileShards_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileShards\FileShards_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileShards\FileShards_GetUserSubFolders_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileShards\FileShards_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileShards\FileShards_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetByName_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetCountByFolder_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetCountByMetadata_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetCountByTag_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetExtensionList_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetFilesByFavorite_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetFilesByFolder_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetFilesByMetadata_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetFilesByTag_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetHistory_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_Recover_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_SaveFileRec_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Files\Files_Save_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileTags\FileTags_Assign_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileTags\FileTags_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileTags\FileTags_GetAssigned_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileTags\FileTags_GetAvailable_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileTags\FileTags_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileTags\FileTags_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileTags\FileTags_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\FileTags\FileTags_Remove_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Folders\Folders_AddSubFolder_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Folders\Folders_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Folders\Folders_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Folders\Folders_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Folders\Folders_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Folders\Folders_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Folders\Folders_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Folders\Folders_GetUserSubFolders_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Folders\Folders_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Folders\Folders_Save_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_FilterByName_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_GetByName_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_GetDestCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_GetSource_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_GetSrcCounts_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_Recover_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_Replicate_neg.xml" />
+    <Content Include="Data\TestFiles\DGPFileStoreAPI\Tags\Tags_Save_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\AutoWorkLog\AutoWorkLog_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\AutoWorkLog\AutoWorkLog_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\AutoWorkLog\AutoWorkLog_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\AutoWorkLog\AutoWorkLog_GetProcSteps_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\AutoWorkLog\AutoWorkLog_GetSearch_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\AutoWorkLog\AutoWorkLog_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPError\DGPError_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPError\DGPError_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPError\DGPError_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPError\DGPError_GetErrData_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPError\DGPError_GetSearch_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPError\DGPError_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPMetrics\DGPError_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPMetrics\DGPMetrics_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPMetrics\DGPMetrics_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPMetrics\DGPMetrics_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\DGPMetrics\DGPMetrics_GetSearch_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\TestResults\TestResults_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\TestResults\TestResults_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\TestResults\TestResults_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\TestResults\TestResults_GetEvalInfo_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\TestResults\TestResults_GetSearch_neg.xml" />
+    <Content Include="Data\TestFiles\DGPMetricsAPI\TestResults\TestResults_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPTestAPI\Test\Test_API_Methods.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\GeneralWork\GeneralWork_ClaimRecords_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\GeneralWork\GeneralWork_Clone_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\GeneralWork\GeneralWork_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\GeneralWork\GeneralWork_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\GeneralWork\GeneralWork_GetAll_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\GeneralWork\GeneralWork_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\GeneralWork\GeneralWork_GetSearch_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\GeneralWork\GeneralWork_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\GeneralWork\GeneralWork_Save_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\ReplicaWork\ReplicaWork_ClaimRecords_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\ReplicaWork\ReplicaWork_Clone_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\ReplicaWork\ReplicaWork_CRUD_proc.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\ReplicaWork\ReplicaWork_Delete_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\ReplicaWork\ReplicaWork_GetAll_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\ReplicaWork\ReplicaWork_GetByID_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\ReplicaWork\ReplicaWork_GetSearch_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\ReplicaWork\ReplicaWork_New_neg.xml" />
+    <Content Include="Data\TestFiles\DGPWorkAPI\ReplicaWork\ReplicaWork_Save_neg.xml" />
+    <Content Include="Icons\Node 2.ico" />
+    <Content Include="Icons\Node.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/DGPWebSvc/DGPSOAPSvc.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DGPSOAPSvc\</RelPath>
+      <UpdateFromURL>http://localhost/DGPWebSvc/DGPSOAPSvc.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DGPDrive_DGPSOAPSvc_DGPSOAPSvc</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

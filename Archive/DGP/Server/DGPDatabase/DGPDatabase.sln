@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGPDatabase", "DGPDatabase.csproj", "{8F1D9D73-B138-42B3-B3D2-B546F8A44634}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F1D9D73-B138-42B3-B3D2-B546F8A44634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F1D9D73-B138-42B3-B3D2-B546F8A44634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F1D9D73-B138-42B3-B3D2-B546F8A44634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F1D9D73-B138-42B3-B3D2-B546F8A44634}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BA52F68-EF50-4703-ADAF-8B12C22A1B70}
+	EndGlobalSection
+EndGlobal

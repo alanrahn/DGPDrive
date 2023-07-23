@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../CSS/DocsPage.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body style="background-color:#2E2E2E;">
+    <div class="titlediv">AutoWorkLog.GetByID.base</div>
+    <p>Method to query for a specific DataGroup record using the global ID value</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Text</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>rec_gid</td><td>Text</td><td>40</td><td>true</td><td>the global ID value for the AutoWorkLog record</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>AutoWorkLog.GetByID.base_DEFAULT</td><td>DataTable</td><td colspan="3">the AutoWorkLog record found matching the ID value</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">AutoWorkLog.GetAll.base</div>
+    <p>Method to query for the 1000 latest TestResult records</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Text</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>AutoWorkLog.GetAll.base_DEFAULT</td><td>DataTable</td><td colspan="3">the set of the latest 1000 AutoWorkLog records</td></tr>
+        </table>
+    </div>
+
+    <div class="titlediv">AutoWorkLog.New.base</div>
+    <p>Method to insert a new TestResult record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>row_gid</td><td>Text</td><td>10</td><td>true</td><td>the unique global ID of the test AutoWorkLog record</td></tr>
+            <tr><td>WorkType</td><td>Text</td><td>10</td><td>true</td><td>the type of autowork process (Replica, Verify, CountCheck, DupeCheck)</td></tr>
+            <tr><td>CompName</td><td>Text</td><td>50</td><td>true</td><td>the name of the computer that ran the automated process</td></tr>
+            <tr><td>ClaimedBy</td><td>Text</td><td>50</td><td>true</td><td>the unique ID of the service that claimed the queue record</td></tr>
+            <tr><td>DurationMS</td><td>Int</td><td></td><td>true</td><td>the duration of the automated process in MS</td></tr>
+            <tr><td>MaxDurMS</td><td>Int</td><td></td><td>true</td><td>the maximum allowed duration of the process in MS</td></tr>
+            <tr><td>RunState</td><td>Text</td><td>10</td><td>true</td><td>the state of the claimed record</td></tr>
+            <tr><td>StateMsg</td><td>Text</td><td>250</td><td>true</td><td>information about the claimed state</td></tr>
+            <tr><td>ProcState</td><td>Text</td><td>10</td><td>true</td><td>the state of the automated process run</td></tr>
+            <tr><td>ProcSteps</td><td>Text</td><td>5000</td><td>true</td><td>information about the execution of the steps of the automated process</td></tr>
+            
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>AutoWorkLog.New.base_DEFAULT</td><td>Text</td><td colspan="3">if successful, the result code of the insert of the new AutoWorkLog record; otherwise, the error message</td></tr>
+        </table>
+    </div>
+    <p>&nbsp;</p>
+</body>
+</html>

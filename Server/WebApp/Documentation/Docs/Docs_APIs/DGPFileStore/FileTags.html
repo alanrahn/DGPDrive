@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../CSS/DocsPage.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body style="background-color:#2E2E2E;">
+    <div class="titlediv">FileTags.GetAssigned.base</div>
+    <p>Method to query for the Tags to which the file record been linked</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td></td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>FileGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID value of the file record</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>FileTags.GetAssigned.base_DEFAULT</td><td>DataTable</td><td colspan="3">all Tag records assigned to the file record, or an error message</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">FileTags.GetAvailable.base</div>
+    <p>Method to query for the Tags to which the file record has not been linked</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td></td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>FileGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID value of the user account</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>FileTags.GetAvailable.base_DEFAULT</td><td>DataTable</td><td colspan="3">all DataGroup records that have not been assigned to the user account, or an error message</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">FileTags.GetSource.base</div>
+    <p>Method to query for a batch of source records that are newer than the placeholder value</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td></td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>SourceDB</td><td>Text</td><td>50</td><td>true</td><td>the name of the database to be queried for source records</td></tr>
+            <tr><td>StartID</td><td>Long</td><td></td><td>true</td><td>the row_id value of the last source record processed</td></tr>
+            <tr><td>BatchSize</td><td>Int</td><td></td><td>true</td><td>the maximum number of records to return as a batch</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>FileTags.GetSource.base_DEFAULT</td><td>DataTable</td><td colspan="3">a batch of records newer than the placeholder value</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">FileTags.Duplicate.base</div>
+    <p>Method to query for the existence of duplicate FileTag records</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>FileTags.Duplicate.base_DEFAULT</td><td>DataTable</td><td colspan="3">the results of the scan for duplicate records</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">FileTags.GetDestCounts.base</div>
+    <p>Method to query for the total number of source records in the destination table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SrcDBName</td><td>Text</td><td>50</td><td>true</td><td>the unique name of the database to be queried</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>FileTags.GetDestCounts.base_DEFAULT</td><td>Int</td><td colspan="3">comma delimited list of the max src_id value and total count of records from the source database in the destination table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">FileTags.GetSrcCounts.base</div>
+    <p>Method to query table for the total number of source records less than the EndID (row_id) value in the source table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SrcDBName</td><td>Text</td><td>50</td><td>true</td><td>the unique name of the database to be queried</td></tr>
+            <tr><td>EndID</td><td>Long</td><td></td><td>true</td><td>the maximum row_id value to be queried</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>FileTags.GetSrcCounts.base_DEFAULT</td><td>Int</td><td colspan="3">comma delimited list of the total count of source records from the source database and the count of records less than the endid in the source table</td></tr>
+        </table>
+    </div>
+
+    <p>&nbsp;</p>
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+
+    <div class="titlediv">FileTags.Assign.base</div>
+    <p>Method to assign access to an API method to a role</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>FileGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID value of the file record</td></tr>
+            <tr><td>TagGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID value of the tag record</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>FileTags.Assign.base_DEFAULT</td><td>Text</td><td colspan="3">returns the action and result code of the insert</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">FileTags.Remove.base</div>
+    <p>Method to remove access to an API method from a role</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>FileGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID value of the file record</td></tr>
+            <tr><td>TagGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID value of the tag record</td></tr>
+            <tr><td>FileTagGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID value of the assignment record to be deleted</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>FileTags.Remove.base_DEFAULT</td><td>DataTable</td><td colspan="3">returns the action and result code of the update</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">FileTags.Replicate.base</div>
+    <p>Method to merge a batch of source records into a destination table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SourceRecords</td><td>DataTable</td><td></td><td>true</td><td>a batch of source records to be merged into a destination table</td></tr>
+            <tr><td>StartID</td><td>Long</td><td></td><td>true</td><td>the row_id value of the last source record processed (initial placeholder set to zero)</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>FileTags.Replicate.base_DEFAULT</td><td>Text</td><td colspan="3">returns the new placeholder value of the last record merged into the destination table</td></tr>
+        </table>
+    </div>
+    <p>&nbsp;</p>
+</body>
+</html>

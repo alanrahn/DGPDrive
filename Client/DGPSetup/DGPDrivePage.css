@@ -1,0 +1,73 @@
+﻿
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #404040;
+    font-family: Verdana;
+    font-size: small;
+    color: lightgray;
+}
+
+b {
+    font-size: 110%;
+}
+
+.titlediv {
+    color: cornflowerblue;
+    margin: 30px 30px 10px 30px;
+    font-size: 120%;
+}
+
+.innerdiv {
+    margin: 10px 30px 10px 30px;
+}
+
+.innerdiv p {
+    padding: 0px 10px 0px 10px;
+}
+
+.innerdiv ul li a {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 5px 5px 5px 10px;
+    font-family: Verdana;
+    font-size: small;
+    color: lightgray;
+}
+
+.innerdiv li {
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px 10px 5px 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    height: 20px;
+}
+
+tr {
+    background-color: #424242;
+    color: lightgray;
+}
+
+th {
+    background-color: dimgray;
+    color: black;
+}
+
+p {
+    color: lightgray;
+    margin: 10px 30px 10px 30px;
+}
+
+p a {
+    color: cadetblue;
+}

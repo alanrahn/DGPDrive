@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/DocsPage.css" rel="stylesheet" type="text/css" />
+    <title>2023 07 15 Changelog</title>
+</head>
+<body>
+    <div class="titlediv">DGPDrive Application</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>Beta Release 0.91</td><td>The initial beta release of the DGPDrive application</td><td class="completed">Beta</td></tr>
+        </table>
+        <p>The DGPDrive application has been modified to use SOAP web services and their optional built-in message encryption.</p>
+    </div>
+
+    <div class="titlediv">DB Setup Application</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>Beta Release 0.91</td><td>The initial beta release of the DB Setup application</td><td class="completed">Beta</td></tr>
+        </table>
+        <p>The DBSetup application is in the process of being modified to add several test tables in order to allow the API Tester test harness to test automated processes.</p>
+    </div>
+
+    <div class="titlediv">DGP Web Applications</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>Beta Release 0.91</td><td>The initial beta release of the DGP Web Applications</td><td class="completed">Beta</td></tr>
+        </table>
+        <p>The documentation web application has been updated with additional content and edited content to keep it in synch with changes made to the various tiers.</p>
+    </div>
+
+    <div class="titlediv">DGP HTTP Web Services</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>Beta Release 0.91</td><td>The initial beta release of the DGP HTTP Web Services</td><td class="completed">Beta</td></tr>
+        </table>
+        <p>
+            The HTTP web services are no longer used by the DGPDrive application and other applications in favor of the SOAP web services.  This is mainly to enable the optional message encryption to be used when needed, but also for the SOAP one-way services used by the AutoWork subsystem.
+            The HTTP web service remains unchanged, and can be used with TLS encryption as an alternative.
+        </p>
+    </div>
+
+    <div class="titlediv">DGP SOAP Web Services</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>Beta Release 0.91</td><td>The initial alpha release of the DGP SOAP Web Services</td><td class="pending">Alpha</td></tr>
+        </table>
+        <p>
+            The SOAP web services have been added to the DGPDrive system to include two types of functionality.  First, they add built-in encryption of the API messages using
+            a PGP style of hybrid cryptosystem (a combination of RSA asymmetric encryption and AES symmetric encryption) as an alternative to TLS.  Second, they add one-way methods
+            using the request/acknowledge pattern (which is only provided by the SOAP protocol) for multi-threaded parallel execution of the many iterations of various automated processes.
+        </p>
+    </div>
+
+    <div class="titlediv">AutoWork Application</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>Beta Release 0.91</td><td>The initial beta release of the AutoWork application</td><td class="pending">Alpha</td></tr>
+        </table>
+        <p>
+            The AutoWork subsystem requires a very reliable, scalable and performant mechanism for the multi-threaded parallel execution of many process iterations.  The third version of this subsystem is being built using SOAP one-way web service methods (request/acknowledge pattern), which allows the AutoWork Windows service to return to being a simple scheduler application.
+        </p>
+    </div>
+
+    <p>&nbsp;</p>
+</body>
+</html>

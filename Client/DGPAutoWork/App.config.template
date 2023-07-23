@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <!-- Web service info -->
+    <add key="SvcURL" value="http://localhost/DGPWebSvc/DGPCntrl.aspx" />
+    <add key="AcctName" value="sysadmin" />
+    <add key="AcctPword" value="P@ssw0rd" />
+    <!-- Service values and settings -->
+    <add key="Logging" value="ON" />
+    <add key="ClaimedBy" value="AutoWork_Win10Dev" />
+    <add key="AutoWorkMaxDurMS" value="100"/>
+    <add key="ReplicaWork" value="ON" />
+    <add key="ReplicaNetwork" value="LOCALHOST" />
+    <add key="ReplicaWorkMS" value="1009" />
+    <add key="ReplicaMaxBatch" value="10" />
+    <add key="GeneralWork" value="OFF" />
+    <add key="GeneralNetwork" value="LOCALHOST" />
+    <add key="GeneralWorkMS" value="5077" />
+    <add key="GeneralMaxBatch" value="10" />
+    <add key="QueueCheck" value="OFF" />
+    <add key="QueueCheckMS" value="10177" />
+    <add key="ErrIntervalSec" value="600" />
+    <!-- Default EventViewer settings -->
+    <add key="EventSource" value=".NET Runtime" />
+    <add key="EventID" value="1000" />
+  </appSettings>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8" />
+    </startup>
+</configuration>

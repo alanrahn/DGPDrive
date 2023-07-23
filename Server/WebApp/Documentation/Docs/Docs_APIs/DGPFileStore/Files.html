@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../CSS/DocsPage.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body style="background-color:#2E2E2E;">
+    <div class="titlediv">File.GetByID.base</div>
+    <p>Method to query for a specific File record using the global ID value</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>FileGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID value for the File record</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetByID.base_DEFAULT</td><td>DataTable</td><td colspan="3">the Tag record found matching the ID value</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetByName.base</div>
+    <p> Method to query for a specific File record using the name value</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td></td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>FileName</td><td>Text</td><td>50</td><td>true</td><td>the FileName value</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetByName.base_DEFAULT</td><td>DataTable</td><td colspan="3">the Tag record found matching the name value</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetExtList.base</div>
+    <p>Method to query for a list of all the different file extensions currently stored in the File table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetExtList.base_DEFAULT</td><td>DataTable</td><td colspan="3">returns a list of unique file extensions</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetCountByFolder.base</div>
+    <p>Method to query for the number of File records that are linked to a specific folder</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>FolderGID</td><td>Text</td><td>50</td><td>false</td><td>the global ID value of the Folder to search for</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetCountByFolder.base_DEFAULT</td><td>Int</td><td colspan="3">the count of records that match the search criteria (used for pagination)</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetFilesByFolder.base</div>
+    <p>Method to query for a page of search results of Files that are linked to a specific folder</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>PageNum</td><td>Int</td><td></td><td>true</td><td>the page number used for server pagination</td></tr>
+            <tr><td>PageSize</td><td>Int</td><td></td><td>true</td><td>the page size used for server pagination</td></tr>
+            <tr><td>FolderGID</td><td>Text</td><td>50</td><td>false</td><td>the global ID value of the Folder to search for</td></tr>
+            <tr><td>SortBy</td><td>Text</td><td>10</td><td>false</td><td>the field to use to sort the search results</td></tr>
+            <tr><td>SortOrder</td><td>Text</td><td>10</td><td>false</td><td>ascending or descending sort order</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetFilesByFolder.base_DEFAULT</td><td>DataTable</td><td colspan="3">a page of records that match the search criteria</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetCountByMetadata.base</div>
+    <p>Method to query for the number of File records that match the rec_state and search criteria</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>rec_state</td><td>Text</td><td>10</td><td>true</td><td>will get the count for either active or deleted records based on the rec_state value</td></tr>
+            <tr><td>FileName</td><td>Text</td><td>50</td><td>false</td><td>the file name to search for</td></tr>
+            <tr><td>FileExt</td><td>Text</td><td>50</td><td>false</td><td>the file extension to search for</td></tr>
+            <tr><td>FileDate</td><td>Text</td><td>50</td><td>false</td><td>the file date to search for (and later)</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetCountByMetadata.base_DEFAULT</td><td>Int</td><td colspan="3">the count of records that match the search criteria (used for pagination)</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetFilesByMetadata.base</div>
+    <p>Method to query for a page of search results that match the rec_state and search criteria</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>PageNum</td><td>Int</td><td></td><td>true</td><td>the page number used for server pagination</td></tr>
+            <tr><td>PageSize</td><td>Int</td><td></td><td>true</td><td>the page size used for server pagination</td></tr>
+            <tr><td>rec_state</td><td>Text</td><td>10</td><td>true</td><td>will get the count for either active or deleted records based on the rec_state value</td></tr>
+            <tr><td>FileName</td><td>Text</td><td>50</td><td>false</td><td>the file name to search for</td></tr>
+            <tr><td>FileExt</td><td>Text</td><td>50</td><td>false</td><td>the file extension to search for</td></tr>
+            <tr><td>FileDate</td><td>Text</td><td>50</td><td>false</td><td>the file date to search for (and later)</td></tr>
+            <tr><td>SortBy</td><td>Text</td><td>10</td><td>false</td><td>the field to use to sort the search results</td></tr>
+            <tr><td>SortOrder</td><td>Text</td><td>10</td><td>false</td><td>ascending or descending sort order</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetFilesByMetadata.base_DEFAULT</td><td>DataTable</td><td colspan="3">a page of records that match the search criteria</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetCountByTag.base</div>
+    <p>Method to query for the number of File records that are linked to a specific Tag</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>rec_state</td><td>Text</td><td>10</td><td>true</td><td>will get the count for either active or deleted records based on the rec_state value</td></tr>
+            <tr><td>TagGID</td><td>Text</td><td>50</td><td>false</td><td>the global ID value of the Tag to search for</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetCountByFolder.base_DEFAULT</td><td>Int</td><td colspan="3">the count of records that match the search criteria (used for pagination)</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetFilesByTag.base</div>
+    <p>Method to query for a page of search results of File records that are linked to a specifi Tag</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>PageNum</td><td>Int</td><td></td><td>true</td><td>the page number used for server pagination</td></tr>
+            <tr><td>PageSize</td><td>Int</td><td></td><td>true</td><td>the page size used for server pagination</td></tr>
+            <tr><td>rec_state</td><td>Text</td><td>10</td><td>true</td><td>will get the count for either active or deleted records based on the rec_state value</td></tr>
+            <tr><td>TagGID</td><td>Text</td><td>50</td><td>false</td><td>the global ID value of the Tag to search for</td></tr>
+            <tr><td>SortBy</td><td>Text</td><td>10</td><td>false</td><td>the field to use to sort the search results</td></tr>
+            <tr><td>SortOrder</td><td>Text</td><td>10</td><td>false</td><td>ascending or descending sort order</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetFilesByFolder.base_DEFAULT</td><td>DataTable</td><td colspan="3">a page of records that match the search criteria</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetCountByFavorite.base</div>
+    <p>Method to query for the number of File records that are in the user's list of favorites</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetCountByFavorite.base_DEFAULT</td><td>Int</td><td colspan="3">the count of records that match the search criteria (used for pagination)</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetFilesByFavorite.base</div>
+    <p>Method to query for a page of search results of Files that are in the user's favorites list</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>PageNum</td><td>Int</td><td></td><td>true</td><td>the page number used for server pagination</td></tr>
+            <tr><td>PageSize</td><td>Int</td><td></td><td>true</td><td>the page size used for server pagination</td></tr>
+            <tr><td>SortBy</td><td>Text</td><td>10</td><td>false</td><td>the field to use to sort the search results</td></tr>
+            <tr><td>SortOrder</td><td>Text</td><td>10</td><td>false</td><td>ascending or descending sort order</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetFilesByFavorite.base_DEFAULT</td><td>DataTable</td><td colspan="3">a page of records that match the search criteria</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetSource.base</div>
+    <p>Method to query for a batch of source records that are newer than the placeholder value and have upload flag = false</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>SourceDB</td><td>Text</td><td>50</td><td>true</td><td>the name of the database to be queried for source records</td></tr>
+            <tr><td>StartID</td><td>Long</td><td></td><td>true</td><td>the row_id value of the last source record processed</td></tr>
+            <tr><td>BatchSize</td><td>Int</td><td></td><td>true</td><td>the maximum number of records to return as a batch</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetSource.base_DEFAULT</td><td>DataTable</td><td colspan="3">a batch of records newer than the placeholder value with no associated file upload</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.Duplicate.base</div>
+    <p>Method to query for the existence of duplicate Tags records</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.Duplicate.base_DEFAULT</td><td>DataTable</td><td colspan="3">the results of the scan for duplicate records</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetDestCounts.base</div>
+    <p>Method to query for the max src_id value and total number of source records in the destination table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SrcDBName</td><td>Text</td><td>50</td><td>true</td><td>the unique name of the database to be queried</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetDestCounts.base_DEFAULT</td><td>Int</td><td colspan="3">comma delimited list of the max src_id value and total count of records from the source database in the destination table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetSrcCounts.base</div>
+    <p>Method to query table for the total number of source records and the number of source records less than the EndID (row_id) value in the source table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SrcDBName</td><td>Text</td><td>50</td><td>true</td><td>the unique name of the database to be queried</td></tr>
+            <tr><td>EndID</td><td>Long</td><td></td><td>true</td><td>the maximum row_id value to be queried</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetSrcCounts.base_DEFAULT</td><td>Int</td><td colspan="3">comma delimited list of the total count of source records from the source database and the count of records less than the endid in the source table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.GetHistory.base</div>
+    <p>Method to query for all versions of a method record using the method global ID value</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Bool</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>FileGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID value for the File record</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.GetHistory.base_DEFAULT</td><td>DataTable</td><td colspan="3">the set of all File records found matching the ID value</td></tr>
+        </table>
+    </div>
+
+    <p>&nbsp;</p>
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+
+    <div class="titlediv">File.New.base</div>
+    <p>Method to create a new File record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>rec_gid</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the File record</td></tr>
+            <tr><td>FolderGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the Folder record</td></tr>
+            <tr><td>FolderPath</td><td>Text</td><td>250</td><td>true</td><td>the delimited folder path where the file is linked</td></tr>
+            <tr><td>GroupGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the DataGroup record</td></tr>
+            <tr><td>FileName</td><td>Text</td><td>50</td><td>true</td><td>the FileName of the file</td></tr>
+            <tr><td>FileDescrip</td><td>Text</td><td>250</td><td>true</td><td>the description of the file</td></tr>
+            <tr><td>FileExt</td><td>Text</td><td>5</td><td>true</td><td>the extension of the file</td></tr>
+            <tr><td>FileSize</td><td>Long</td><td></td><td>true</td><td>the size in bytes of the original file</td></tr>
+            <tr><td>FileDate</td><td>DateTime</td><td></td><td>true</td><td>the datetime of the file</td></tr>
+            <tr><td>FileHash</td><td>Text</td><td>250</td><td>true</td><td>the hash value of the original file</td></tr>
+            <tr><td>FileVersion</td><td>Int</td><td></td><td>true</td><td>the version of the file being uploaded</td></tr>
+            <tr><td>SegSize</td><td>Int</td><td></td><td>true</td><td>the size in bytes of the file segment</td></tr>
+            <tr><td>TotalSeg</td><td>Int</td><td></td><td>true</td><td>the total number of segments for the file upload</td></tr>
+            <tr><td>File.New.base_DEFAULT</td><td>Text</td><td colspan="3">returns the global ID of the new File record</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.Save.base</div>
+    <p>Method to update an existing File record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>rec_gid</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the File record</td></tr>
+            <tr><td>row_ms</td><td>Long</td><td></td><td>true</td><td>the unix time value of the record to be updated</td></tr>
+            <tr><td>FolderGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the Folder record</td></tr>
+            <tr><td>FolderPath</td><td>Text</td><td>250</td><td>true</td><td>the delimited folder path where the file is linked</td></tr>
+            <tr><td>GroupGID</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the DataGroup record</td></tr>
+            <tr><td>FileName</td><td>Text</td><td>50</td><td>true</td><td>the FileName of the file</td></tr>
+            <tr><td>FileDescrip</td><td>Text</td><td>250</td><td>true</td><td>the description of the file</td></tr>
+            <tr><td>FileExt</td><td>Text</td><td>5</td><td>true</td><td>the extension of the file</td></tr>
+            <tr><td>FileSize</td><td>Long</td><td></td><td>true</td><td>the size in bytes of the original file</td></tr>
+            <tr><td>FileDate</td><td>DateTime</td><td></td><td>true</td><td>the datetime of the file</td></tr>
+            <tr><td>FileHash</td><td>Text</td><td>250</td><td>true</td><td>the hash value of the original file</td></tr>
+            <tr><td>FileVersion</td><td>Int</td><td></td><td>true</td><td>the version of the file being uploaded</td></tr>
+            <tr><td>SegSize</td><td>Int</td><td></td><td>true</td><td>the size in bytes of the file segment</td></tr>
+            <tr><td>TotalSeg</td><td>Int</td><td></td><td>true</td><td>the total number of segments for the file upload</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.Save.base_DEFAULT</td><td>Text</td><td colspan="3">returns the action and result code of the update</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.Delete.base</div>
+    <p>Method to update an existing File record (update as soft delete)</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>rec_gid</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the File record</td></tr>
+            <tr><td>FileName</td><td>Text</td><td>50</td><td>true</td><td>the FileName of the file</td></tr>
+            <tr><td>FileDescrip</td><td>Text</td><td>250</td><td>true</td><td>the description of the file</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.Delete.base_DEFAULT</td><td>Text</td><td colspan="3">returns the action and result code of the update</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.SaveFileRec.base</div>
+    <p>Method to update certain editable fields of an existing File record</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>rec_gid</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the File record</td></tr>
+            <tr><td>FileName</td><td>Text</td><td>50</td><td>true</td><td>the FileName of the file</td></tr>
+            <tr><td>FileDescrip</td><td>Text</td><td>250</td><td>true</td><td>the description of the file</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.SaveFileRec.base_DEFAULT</td><td>Text</td><td colspan="3">returns the segment data downloaded from the server</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.Replicate.base</div>
+    <p>Method to merge a batch of source records into a destination table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SourceRecords</td><td>DataTable</td><td></td><td>true</td><td>a batch of source records to be merged into a destination table</td></tr>
+            <tr><td>StartID</td><td>Long</td><td></td><td>true</td><td>the row_id value of the last source record processed (initial placeholder set to zero)</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.Replicate.base_DEFAULT</td><td>Text</td><td colspan="3">returns the new placeholder value of the last record merged into the destination table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">File.Recover.base</div>
+    <p>Method to recover a File record that has been edited or deleted</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>Action</td><td>Text</td><td>10</td><td>true</td><td>insert, update, delete of the File record being recovered</td></tr>
+            <tr><td>rec_gid</td><td>Text</td><td>50</td><td>true</td><td>the global ID of the File record</td></tr>
+            <tr><td>row_id</td><td>Long</td><td></td><td>true</td><td>the src_id of the File record</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>File.Recover.base_DEFAULT</td><td>Text</td><td colspan="3">returns the action and result code of the recovery</td></tr>
+        </table>
+    </div>
+    <p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94CAE20C-5267-4E16-AAF2-CFB478561991}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DGPTestApi</RootNamespace>
+    <AssemblyName>DGPTestApi</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\Test_mapper.cs" />
+    <Compile Include="Test\Test_switch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SqlSvrLibs\SqlSvrUtil\SqlSvrUtil.csproj">
+      <Project>{4b8c2e8d-2f49-4cf1-ab80-117d66a197da}</Project>
+      <Name>SqlSvrUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SqlSvrLibs\SysInfoDB\SysInfoDB.csproj">
+      <Project>{b7b0751e-ea63-4917-93b9-205bdb8b71da}</Project>
+      <Name>SysInfoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SqlSvrLibs\SysMetricsDB\SysMetricsDB.csproj">
+      <Project>{be4ca27a-0d82-42be-a72f-a9f501577119}</Project>
+      <Name>SysMetricsDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SqlSvrLibs\SysWorkDB\SysWorkDB.csproj">
+      <Project>{0ff037a4-d0e5-4e17-aa3f-33a68ab15717}</Project>
+      <Name>SysWorkDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APIUtil\ApiUtil.csproj">
+      <Project>{536f7976-5146-4741-8fec-3ec152b4630b}</Project>
+      <Name>ApiUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

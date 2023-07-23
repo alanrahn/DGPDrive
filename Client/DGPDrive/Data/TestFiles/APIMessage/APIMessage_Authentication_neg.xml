@@ -1,0 +1,65 @@
+
+	<TestBatch>
+		<TName>APIMessage Negative Authentication</TName>
+		<TDescrip>Negative tests of the request message authentication process</TDescrip>
+		<TGID>{{TGID}}</TGID>
+		<TMsg>
+			<TMUserName></TMUserName>
+			<TMPassword></TMPassword>
+			<TMName>Test.EchoTest.base</TMName>
+			<TMDescrip>missing UserName and Password</TMDescrip>
+			<TMExpAuthCode>NOMATCH</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>Test.EchoTest.base</MName>
+				<PList>
+					<Prm>
+						<Name>EchoValue</Name>
+						<Val>
+							<![CDATA[Test of missing UserName and Password message parameters]]>
+						</Val>
+					</Prm>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>MethodError_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+		<TMsg>
+			<TMUserName>WrongUserName</TMUserName>
+			<TMPassword>WrongPassword</TMPassword>
+			<TMName>Test.EchoTest.base</TMName>
+			<TMDescrip>incorrect UserName</TMDescrip>
+			<TMExpAuthCode>NOMATCH</TMExpAuthCode>
+			<TMMsgType>NEG</TMMsgType>
+			<Meth>
+				<MName>Test.EchoTest.base</MName>
+				<PList>
+					<Prm>
+						<Name>EchoValue</Name>
+						<Val>
+							<![CDATA[Test of incorrect UserName and Password message parameter]]>
+						</Val>
+					</Prm>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>MethodError.base_DEFAULT</RName>
+					<ExpRCode>ERROR</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+	</TestBatch>
+	

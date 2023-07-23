@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <startup> 
+      <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8"/>
+  </startup>
+  <appSettings>
+    <add key="Network" value="LOCALHOST"/>
+    <add key="AutoWorkLogging" value="ON"/>
+    <add key="AutoWorkMaxDurMS" value="50"/>
+    <add key="EventSource" value=".NET Runtime"/>
+    <add key="EventID" value="1000"/>
+  </appSettings>
+</configuration>

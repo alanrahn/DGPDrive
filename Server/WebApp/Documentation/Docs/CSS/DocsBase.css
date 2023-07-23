@@ -1,0 +1,128 @@
+﻿
+    html, body {
+        margin: 0px;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .row, .col {
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .row {
+        left: 0px;
+        right: 0px;
+    }
+
+    .col {
+        top: 0px;
+        bottom: 0px;
+    }
+
+    .scroll-x {
+        overflow-x: auto;
+    }
+
+    .scroll-y {
+        overflow-y: auto;
+    }
+
+    .horiz-menu {
+        width: 100%;
+        background-color: gray;
+        height: 30px;
+        line-height: 30px;
+        font-family: Verdana;
+        font-size: medium;
+    }
+
+    .horiz-menu ul {
+        margin: 0;
+        padding: 0;
+        float: left;
+    }
+
+    .horiz-menu ul li {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .horiz-menu ul li a {
+        float: left;
+        text-decoration: none;
+        padding: 0px 10px 10px 10px;
+        color: lightgray;
+    }
+
+    .horiz-menu ul li a:visited {
+        color: lightgray;
+    }
+
+    .horiz-menu ul li a:hover, .horiz-menu ul li .current {
+        color: lightgray;
+        background-color: #424242;
+    }
+
+    .horiz-menu .horiz-tab {
+        color: lightgray;
+        background-color: gray;
+        }
+
+    .horiz-menu .active-tab {
+        color: lightgray;
+        background-color: #424242;
+    }
+
+    .vert-menu {
+        background-color: dimgray;
+        font-family: Verdana;
+        font-size: small;
+    }
+
+    .vert-menu ul {
+        margin: 0;
+        padding: 0px;
+        height:100%;
+    }
+
+    .vert-menu ul li {
+        display: inline-block;
+        vertical-align: middle;
+        width: 150px;
+        margin-bottom: 5px;
+    }
+
+    .vert-menu ul li a {
+        text-decoration: none;
+        color: black;
+        padding: 5px 5px 5px 10px;
+        text-align: center;
+        vertical-align: middle;
+        width: 150px;
+    }
+
+    .vert-menu ul li a:visited a:link {
+        color: black;
+    }
+
+    .vert-menu ul li:hover, .vert-menu ul li .current {
+        color: black;
+        background-color: lightgray;
+    }
+
+    .vert-menu .vert-tab {
+        color: black;
+        background-color: dimgray;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .vert-menu .active-tab {
+        color: black;
+        background-color: lightgray;
+    }
+
+
+

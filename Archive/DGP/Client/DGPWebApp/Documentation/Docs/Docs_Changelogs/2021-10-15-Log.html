@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/DocsPage.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body>
+    <div class="titlediv">DGPDrive Application</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>Added encrypted message functionality</td><td>Added message encryption to the APIUtil library, and then modified all parts of the DGPDrive UI to use the new message encryption methods</td><td class="completed">Completed</td></tr>
+            <tr><td>Manual testing of the encrypted message functionality</td><td>Manual testing of all parts of the DGPDrive UI to verify the correct functionality of the new message encryption methods</td><td class="completed">Completed</td></tr>
+            <tr><td>API Tester testing of the encrypted message functionality</td><td>Modified the API Tester to use the message encryption library methods, and verified the correct functionality with multiple full regression tests.</td><td class="completed">Completed</td></tr>
+        </table>
+    </div>
+
+    <div class="titlediv">DB Setup Application</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>No changes</td><td>Added integration testing of the data access methods to the application.</td><td class="completed">Completed</td></tr>
+        </table>
+    </div>
+
+    <div class="titlediv">AutoWork Application</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>Added encrypted message functionality</td><td>Modified the AutoWork logic to use the new encrypted message functionality.</td><td class="completed">Completed</td></tr>
+            <tr><td>Changed to the System.Threading.Timer</td><td>Changed the AutoWork app to use the System.Threading.Timer instead of the System.Timer in order for the app to only use local .NET threadpool threads.</td><td class="completed">Completed</td></tr>
+            <tr><td>System.Threading.Timer testing</td><td>Stress testing of the AutoWork app to insure the Threading timer produced the desired results.</td><td class="completed">Completed</td></tr>
+            <tr><td>Added QueueCheck logic</td><td>Added an automated process to periodically scan the queue table looking for problems, logging them when found, and then resetting the queue record.</td><td class="completed">Completed</td></tr>
+        </table>
+    </div>
+
+    <div class="titlediv">DGP Web Applications</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>Added RSA pub key controller</td><td>Added a simple REST-like page to return the web service RSA public key to the calling app</td><td class="completed">Completed</td></tr>
+        </table>
+    </div>
+
+    <div class="titlediv">DGP Web Services</div>
+    <div class="innerdiv">
+        <table class="doctable">
+            <tr><th class="functionality">Name</th><th class="description">Description</th><th class="status">Status</th></tr>
+            <tr><td>Added ecnrypted message functionality</td><td>Modified the existing API controller to use the message encryption functionality.</td><td class="completed">Completed</td></tr>
+            <tr><td>Ecnrypted message testing</td><td>Manual use of the DGPDrive UI plus the API Tester were used to verify the message encryption functionality.</td><td class="completed">Completed</td></tr>
+        </table>
+    </div>
+
+    <p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/DocsBase.css" rel="stylesheet" type="text/css" />
+    <title>DGP Client Tier</title>
+</head>
+<body style="background-color:dimgray;">
+    <div class="col" style="left:0px; width:150px;">
+        <div class="vert-menu">
+            <ul>
+                <li class="vert-tab active-tab"><a href="ClientTierOverview.pdf" target="docpanel">Overview</a></li>
+                <li class="vert-tab"><a href="Lattice/LatticeIndex.html" target="docpanel">Lattice</a></li>
+                <li class="vert-tab"><a href="DBSetup/DBSetup.pdf" target="docpanel">DBSetup</a></li>
+                <li class="vert-tab"><a href="AutoWork/AutoWork.pdf" target="docpanel">DGPAutoWork</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col" style="left:150px; right:0px;">
+        <iframe id="docpanel" name="docpanel" src="ClientTierOverview.pdf" style="width: 100%; height:100%; border: none; overflow: auto;"></iframe>
+    </div>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/doc-tabs.js"></script>
+</body>
+</html>

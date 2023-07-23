@@ -1,0 +1,94 @@
+
+	<TestBatch>
+		<TName>Test API Methods</TName>
+		<TDescrip>Call to methods that test some of the basic functionality of DGP web services</TDescrip>
+		<TGID>{{TGID}}</TGID>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>Test.EchoTest.base</TMName>
+			<TMDescrip>test of the basic web service security functionality which returns the input parameter as the method result</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>POS</TMMsgType>
+			<Meth>
+				<MName>Test.EchoTest.base</MName>
+				<PList>
+					<Prm>
+						<Name>EchoValue</Name>
+						<Val>
+							<![CDATA[This is a test of the basic web service security functionality which returns the input parameter as the method result]]>
+						</Val>
+					</Prm>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>Test.EchoTest.base_DEFAULT</RName>
+					<ExpRCode>OK</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>Test.LoggingTest.base</TMName>
+			<TMDescrip>test of the ServerErrLog server-side logging</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>POS</TMMsgType>
+			<Meth>
+				<MName>Test.LoggingTest.base</MName>
+				<PList>
+					<Prm>
+						<Name></Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>Test.LoggingTest.base_DEFAULT</RName>
+					<ExpRCode>OK</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+		<TMsg>
+			<TMUserName>{{TMUserName}}</TMUserName>
+			<TMPassword>{{TMPassword}}</TMPassword>
+			<TMName>Test.ExceptionTest.base</TMName>
+			<TMDescrip>test of the web service exception handling</TMDescrip>
+			<TMExpAuthCode>OK</TMExpAuthCode>
+			<TMMsgType>POS</TMMsgType>
+			<Meth>
+				<MName>Test.ExceptionTest.base</MName>
+				<PList>
+					<Prm>
+						<Name></Name>
+						<Val>
+							<![CDATA[]]>
+						</Val>
+					</Prm>
+				</PList>
+			</Meth>
+			<RList>
+				<Result>
+					<RName>Test.ExceptionTest.base_DEFAULT</RName>
+					<ExpRCode>EXCEPTION</ExpRCode>
+					<ExpDType>TEXT</ExpDType>
+					<ExpRVal></ExpRVal>
+					<ValMatch></ValMatch>
+					<VarName></VarName>
+				</Result>
+			</RList>
+		</TMsg>
+	</TestBatch>
+	

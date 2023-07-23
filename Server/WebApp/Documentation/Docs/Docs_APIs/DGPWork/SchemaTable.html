@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../CSS/DocsPage.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body>
+    <div class="titlediv">FileStore.Favorites</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>Favorite.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>Favorite.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>Favorite.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>Favorite.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>Favorite.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">FileStore.Files</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>File.GetSource.base</td><td>Query for batch of records from the Files table that had no associated upload</td></tr>
+            <tr><td>Polling</td><td>File.GetSource.upload</td><td>Query for batch of records from the Files table that had an associated file upload</td></tr>
+            <tr><td>Merge</td><td>File.Replicate.base</td><td>Merge batch of file records that have no associated file upload into a destination table</td></tr>
+            <tr><td>Merge</td><td>File.Replicate.upload</td><td>Merge batch of source records that have an associated file upload into a destination table</td></tr>
+            <tr><td>Check</td><td>File.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>File.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>File.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">FileStore.FileTags</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>FileTag.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>FileTag.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>FileTag.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>FileTag.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>FileTag.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">FileStore.Folders</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>Folder.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>Folder.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>Folder.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>Folder.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>Folder.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div><div class="titlediv">FileStore.Tags</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>Tag.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>Tag.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>Tag.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>Tag.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>Tag.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">SysInfo.APIMethod</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>APIMethod.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>APIMethod.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>APIMethod.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>APIMethod.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>APIMethod.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">SysInfo.APIRole</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>APIRole.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>APIRole.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>APIRole.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>APIRole.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>APIRole.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">SysInfo.APIUser</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>APIUser.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>APIUser.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>APIUser.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>APIUser.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>APIUser.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">SysInfo.DataGroup</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>DataGroup.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>DataGroup.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>DataGroup.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>DataGroup.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>DataGroup.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">SysInfo.GroupUser</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>GroupUser.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>GroupUser.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>GroupUser.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>GroupUser.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>GroupUser.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">SysInfo.RoleMethod</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>RoleMethod.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>RoleMethod.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>RoleMethod.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>RoleMethod.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>RoleMethod.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">SysInfo.RoleUser</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Method Type</th><th>Method Name</th><th>Description</th></tr>
+            <tr><td>Polling</td><td>RoleUser.GetSource.base</td><td>Query for batch of records from a source table</td></tr>
+            <tr><td>Merge</td><td>RoleUser.Replicate.base</td><td>Merge batch of source records into a destination table</td></tr>
+            <tr><td>Check</td><td>RoleUser.GetDestCounts.base</td><td>Query for counts of source records in a destination table</td></tr>
+            <tr><td>Check</td><td>RoleUser.GetSrcCounts.base</td><td>Query for counts of source records in a source table</td></tr>
+            <tr><td>Check</td><td>RoleUser.DupeCheck.base</td><td>Query for counts of duplicate records in a replica table</td></tr>
+        </table>
+    </div>
+    <p>&nbsp;</p>
+</body>
+</html>

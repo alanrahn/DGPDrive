@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../CSS/DocsPage.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body style="background-color:#2E2E2E;">
+    <div class="titlediv">RoleMethod.GetUserMethods.base</div>
+    <p>Method to query for all the API methods to which the user account has been assigned access</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Text</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>UserGID</td><td>Text</td><td>40</td><td>true</td><td>the global ID value of the user account</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>RoleMethod.GetUserMethods.base_DEFAULT</td><td>DataTable</td><td colspan="3">all API methods that have been assigned to the user account, or an error message</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">RoleMethod.GetMethodRoles.base</div>
+    <p>Method to query for all the roles to which the API method has been assigned</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Text</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>MethodGID</td><td>Text</td><td>40</td><td>true</td><td>the global ID value of the API method</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>RoleMethod.GetMethodRoles.base_DEFAULT</td><td>DataTable</td><td colspan="3">all APIRoles that an API method has been assigned to, or an error message</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">RoleMethod.GetAssigned.base</div>
+    <p>Method to query for the API methods to which the role has been assigned access</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Text</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>RoleGID</td><td>Text</td><td>40</td><td>true</td><td>the global ID value of the role</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>RoleMethod.GetAssigned.base_DEFAULT</td><td>DataTable</td><td colspan="3">all API method records assigned to the role, or an error message</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">RoleMethod.GetAvailable.base</div>
+    <p>Method to query for the API methods to which the role has not been assigned access</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Text</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>RoleGID</td><td>Text</td><td>40</td><td>true</td><td>the global ID value of the role</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>RoleMethod.GetAvailable.base_DEFAULT</td><td>DataTable</td><td colspan="3">all API method records that have not been assigned to the role, or an error message</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">RoleMethod.GetSource.base</div>
+    <p>Method to query for a batch of source records that are newer than the placeholder value</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SchemaFlag</td><td>Text</td><td>10</td><td>true</td><td>flag value to return the tabular result data with or without the DataTable metadata</td></tr>
+            <tr><td>SourceDB</td><td>Int</td><td></td><td>true</td><td>the name of the database to be queried for source records</td></tr>
+            <tr><td>StartID</td><td>Int</td><td></td><td>true</td><td>the row_id value of the last source record processed</td></tr>
+            <tr><td>BatchSize</td><td>Text</td><td>50</td><td>true</td><td>the maximum number of records to return as a batch</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>RoleMethod.GetSource.base_DEFAULT</td><td>DataTable</td><td colspan="3">a batch of records newer than the placeholder value</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">APIMethod.Duplicate.base</div>
+    <p>Method to query for the existence of duplicate RoleMethod records</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td></td><td></td><td>10</td><td></td><td></td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>APIMethod.Duplicate.base_DEFAULT</td><td>DataTable</td><td colspan="3">the results of the scan for duplicate records</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">APIMethod.GetDestCounts.base</div>
+    <p>Method to query for the total number of source records in the destination table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SrcDBName</td><td>Text</td><td>10</td><td>true</td><td>the unique name of the database to be queried</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>APIMethod.GetDestCounts.base_DEFAULT</td><td>Int</td><td colspan="3">comma delimited list of the max src_id value and total count of records from the source database in the destination table</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">APIMethod.GetSrcCounts.base</div>
+    <p>Method to query table for the total number of source records less than the EndID (row_id) value in the source table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SrcDBName</td><td>Text</td><td>10</td><td>true</td><td>the unique name of the database to be queried</td></tr>
+            <tr><td>EndID</td><td>Text</td><td>50</td><td>true</td><td>the maximum row_id value to be queried</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>APIMethod.GetSrcCounts.base_DEFAULT</td><td>Int</td><td colspan="3">comma delimited list of the total count of source records from the source database and the count of records less than the endid in the source table</td></tr>
+        </table>
+    </div>
+
+    <p>&nbsp;</p>
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+
+    <div class="titlediv">RoleMethod.Assign.base</div>
+    <p>Method to assign access to an API method to a role</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>RoleGID</td><td>Text</td><td>40</td><td>true</td><td>the global ID value of the user account</td></tr>
+            <tr><td>MethodGID</td><td>Text</td><td>40</td><td>true</td><td>the global ID value of the API method</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>RoleMethod.Assign.base_DEFAULT</td><td>Text</td><td colspan="3">returns the action and result code of the insert</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">RoleMethod.Remove.base</div>
+    <p>Method to remove access to an API method from a role</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>RoleGID</td><td>Text</td><td>40</td><td>true</td><td>the global ID value of the role</td></tr>
+            <tr><td>MethodGID</td><td>Text</td><td>40</td><td>true</td><td>the global ID value of the API method</td></tr>
+            <tr><td>RoleMethodGID</td><td>Text</td><td>40</td><td>true</td><td>the global ID value of the assignment record to be deleted</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>RoleMethod.Remove.base_DEFAULT</td><td>DataTable</td><td colspan="3">returns the action and result code of the update</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">RoleMethod.Replicate.base</div>
+    <p>Method to merge a batch of source records into a destination table</p>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Param Name</th><th>Data</th><th>Length</th><th>Required</th><th>Description</th></tr>
+            <tr><td>SourceRecords</td><td>DataTable</td><td></td><td>true</td><td>a batch of source records to be merged into a destination table</td></tr>
+            <tr><td>StartID</td><td>Int</td><td></td><td>true</td><td>the row_id value of the last source record processed</td></tr>
+            <tr><th>Return Name</th><th>Data</th><th colspan="3">Description</th></tr>
+            <tr><td>RoleMethod.Replicate.base_DEFAULT</td><td>Text</td><td colspan="3">returns the new placeholder value of the last record merged into the destination table</td></tr>
+        </table>
+    </div>
+    <p>&nbsp;</p>
+</body>
+</html>

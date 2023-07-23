@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="LatticePage.css" rel="stylesheet" type="text/css" />
+    <title>DB Setup Help</title>
+</head>
+<body>
+    <div class="titlediv">Prerequisites</div>
+    <div class="innerdiv">
+        <table>
+            <tr><th>Prerequisite</th><th>Description</th></tr>
+            <tr><td>Windows</td><td>Windows 10 for development and testing computers, or Windows Server Standard for production systems is required.</td></tr>
+            <tr><td>.NET Framework</td><td>The .NET Framework 4.8 (the full framework that runs on the Windows OS) is required.  
+                Refer to Microsoft's documentation to download and install either the Runtime or the Developer Pack.</td></tr>
+            <tr><td>Windows IIS Web Server</td><td>The IIS web server, hosting ASP.NET is required.  Refer to Microsoft's documentation to enable optional Windows functionality.</td></tr>
+            <tr><td>SQL Server</td><td>Either the free Express or Standard edition of the SQL Server database engine and management tools must be setup and configured.  
+                Refer to Microsoft's documentation for setup information, and the DGP Lattice Setup documentation for some additional installation details.</td></tr>
+            <tr><td>Empty Databases</td><td>4 DGP empty databases (Lattice, SysInfo, SysMetrics, SysWork, and 2 optional databases - TestDB1 and TestDB2) must be created prior to building their schemas.  
+                They must have database names that are unique within the DGP Lattice distributed system.</td></tr>
+            <tr><td>SQL Server Accounts</td><td>SQL Server accounts that have read/write access to each of the Lattice databases must be created.  
+                The sa account can be used for development and testing, but is a bad idea to use for production systems.</td></tr>
+            <tr><td>Documentation</td><td>Refer to the DGP Lattice Setup documentation for more information regarding each of these prerequisites.</td></tr>
+        </table>
+    </div>
+    <div class="titlediv">Step 1: Connect to SQL Server</div>
+    <div class="innerdiv">
+        <p>
+            SQL Server HostName:  This is either the name of the SQL Server host (if the name can be resolved to an IP address) or the IP address of the host itself.  An alias for the loopback address such as "localhost" can also be used.
+        </p>
+        <p>
+            SQL Server UserName and Password:  These are the SQL Server account credentials that have read/write access to the DGP Lattice databases and can also run the ALTER TABLE logic which creates (or adds to)
+            the database tables, indexes, etc.
+        </p>
+        <p>
+            Once these values have been entered, the admin user can click the Connect to DB button.  If the connection is successful, a list of the databases on that server will populate the grid below it in the UI.
+        </p>
+    </div>
+    <div class="titlediv">Step 2: Select Database to be Updated</div>
+    <div class="innerdiv">
+        <p>
+            After step 1, the databases on the connected server (other than SQL Server system databases) are shown in a grid. There are no forced naming conventions for Lattice database names, 
+            which is why they must be selected by an admin user from the grid.
+        </p>
+        <p>
+            DGP Lattice systems rely on idempotent processes in many areas.  An idempotent process will only perform actions the first time they are run - they will not duplicate actions that have already been run previously.
+            The functionality in the DB Setup application are all idempotent processes that help enforce the "immuatable, append-only" convention for DGP Lattice schemas and core data.
+        </p>
+        <p>
+            Selecting one of the databases in the grid enables the next step in the UI.
+        </p>
+    </div>
+    <div class="titlediv">Step 3: Select the Matching DGP Schema</div>
+    <div class="innerdiv">
+        <p>
+            This step matches the selected database from Step 2 with one of the 4 (or 6) Lattice database schemas.
+        </p>
+        <p>
+            Note: If the SysInfo schema is selected from the dropdown list, that will enable the optional SysInfo Values section of the UI, which requires some additional information from the admin user.  
+            This section of the UI is necessary due to the fact that there are no default values used when setting up a DGP Lattice system (to help improve security).  Instead of having 
+            default super admin account names, passwords, and so on, DGP Lattice forces admin users to create their own values when the system is first configured.  For this reason, 
+            it is VERY important to save the information from the DB Setup utility to a password manager or other secure system.
+        </p>
+        <p>
+            <ul>
+                <li>Lattice Admin Username:  create an account name for the super admin account that has access to all DGP Lattice functionality for a new system.</li>
+                <li>Lattice Admin Password:  create the password of the super admin account.</li>
+                <li>Note:  after the first time, it is no longer possible to create a new super admin account or password (it is an idempotent process).</li>
+                <li>Web Service Key:  the AES-253 encryption key used for zero-knowledge encryption of data in the system.  All web services that are part of the same environment of 
+                a system MUST use the same encryption key, which means it must be copied/shared in each location of that environment.  Also, the value used to update the databases must 
+                be the encryption key currently in use by the web services - otherwise, it will be impossible to decrypt any new core data added to an existing system.</li>
+                <li>Web Service Version:  a label that indicates which version of the encryption key is the current version.  All versions of the key are preserved and used to decrypt 
+                older records when necessary.</li>
+                <li>The Web Service Key and Web Service Version values must be saved and copied into the web.config file of the system web services, 
+                or copied from the web.config files to update an existing system.</li>
+            </ul>
+        </p>
+    </div>
+    <div class="titlediv">Step 4: Update DB Schema/Data</div>
+    <div class="innerdiv">
+        <p>
+            The previous steps connected to the database server, selected one of the Lattice databases, and selected the correct Lattice schema for that database.  The last step
+            runs the immutable append-only idempotent scan of the database schema and optional core data.  If the default schema is not found, it will be created.  If it is found, the scan checks for
+            any columns or indexes that are to be appended to the default schema, and adds them if they are missing.
+        </p>
+        <p>
+            Finally, after scanning the schema, the data in some tables are scanned for core data records.  If any records are missing, they are added as if they had been replicated from a
+            master database (which in reality only exists in code).  This process merges core data into each database of each location of each environment that is largely consistent across all of them, 
+            but some of which is customized per environment, and all of which is ignored by replication processes that synchronize new data between locations.
+        </p>
+        <p>
+            Important Note:  while most additions to a schema can be done while a database is in use, some modificatons will cause a rebuild of the database table to occur.
+            If the database contains a large number of records, this could take a very long time (and render the database unusable for the duration).
+            For this reason, schema updates should only be done during the period of time when a specific database server has been taken offline for maintenance.
+        </p>
+    </div>
+    <p>&nbsp;</p>
+</body>
+</html>
